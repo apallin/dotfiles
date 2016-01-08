@@ -15,3 +15,10 @@ for al in `__git_aliases`; do
     complete_func=_git_$(__git_aliased_command $al)
     function_exists $complete_fnc && __git_complete g$al $complete_func
 done
+
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
