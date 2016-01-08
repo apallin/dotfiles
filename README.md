@@ -9,5 +9,6 @@ To install all symlinks and files run:
     ./manage.sh install
 
 To remove all symlinks and files run:
+    
     ./manage.sh remove
 
