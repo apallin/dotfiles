@@ -1,0 +1,48 @@
+[user]
+  name = Adam Pallin
+  email = adamrpallin@gmail.com
+[core]
+  excludesfile = ~/.gitignore
+  whitespace = trailing-space,space-before-tab
+[color]
+  ui = auto
+[github]
+  user = apallin
+[alias]
+  a           = add
+  adeleted    = !sh -c 'git ls-files `git rev-parse --show-toplevel` --deleted -z | xargs -0 git rm -r'
+  ap          = add -p
+  auntracked  = !sh -c 'git ls-files `git rev-parse --show-toplevel` --others --exclude-standard -z | xargs -0 git add'
+  b           = branch
+  ba          = branch -a
+  branches    = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+  c           = clone --recursive
+  co          = checkout
+  cob         = checkout -b
+  ca          = commit -a --verbose
+  cm          = commit -m
+  cam         = commit -a -m
+  caam        = commit -a --amend --verbose
+  d           = diff
+  dc          = diff --cached
+  dstash      = !sh -c 'git stash show -p stash@{${1-0}}' -
+  l           = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  la          = "!git config -l | grep alias | cut -c 7-"
+  last        = diff HEAD^ HEAD
+  pul         = pull
+  punch       = push --force-with-lease
+  r           = reflog -5
+  ra          = rebase --abort
+  rc          = rebase --continue
+  rma         = rebase master
+  rmi         = rebase master -i
+  rv          = remote -v
+  s           = status -sb
+  sub         = submodule update --init --recursive
+  undo        = reset --soft HEAD^
+[fetch]
+  prune = true
+[branch]
+  autosetupmerge = true
+[rerere]
+  enabled = true
