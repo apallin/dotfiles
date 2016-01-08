@@ -10,6 +10,7 @@
   user = apallin
 [alias]
   a           = add
+  ac          = !git add . && git commit -am
   adeleted    = !sh -c 'git ls-files `git rev-parse --show-toplevel` --deleted -z | xargs -0 git rm -r'
   ap          = add -p
   auntracked  = !sh -c 'git ls-files `git rev-parse --show-toplevel` --others --exclude-standard -z | xargs -0 git add'
@@ -31,12 +32,14 @@
   last        = diff HEAD^ HEAD
   pul         = pull
   punch       = push --force-with-lease
+  push        = push
   r           = reflog -5
   ra          = rebase --abort
   rc          = rebase --continue
   rma         = rebase master
   rmi         = rebase master -i
   rv          = remote -v
+  rao         = remote add origin
   s           = status -sb
   sub         = submodule update --init --recursive
   undo        = reset --soft HEAD^
