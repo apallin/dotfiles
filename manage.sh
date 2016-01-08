@@ -78,9 +78,8 @@ fi
 # Check whether the user is installing or removing
 if [[ $1 == "install" ]]; then
     install_links
-    source $HOME/.bash_profile
-    source $HOME/.bashrc
     mkdir -p $HOME/pythonenvs
+    echo "Done! Reload your shell."
 elif [[ $1 == "remove" ]]; then
     remove_links
 elif [[ $1 == "clean" ]]; then
