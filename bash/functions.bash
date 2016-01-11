@@ -2,6 +2,8 @@
 pyclean () {
     find . -name "*.pyc" -exec rm -rf {} \;
     find . -name "__pycache__" -exec rm -rf {} \;
+    find . -name ".cache" -exec rm -rf {} \;
+
 }
 
 # showa: To remind yourself of an alias (given some part of it)
