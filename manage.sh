@@ -4,6 +4,7 @@ FILES=(\
     bash_profile \
     bashrc \
     gitconfig \
+    tmux.conf \
 )
 
 function custom_path () {
