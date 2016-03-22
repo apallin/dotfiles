@@ -1,7 +1,14 @@
 bindkey -e
 
-# Plugins
-source "$HOME/.antigen/antigen.zsh"
+# Path to dotfiles repo
+export DOTFILES="$(dirname "$(readlink "$HOME/.zshrc")")"
+
+configs=($DOTFILES/*/*.bash)
+for file in "${configs[@]}"
+do
+  source "$file"
+done
+
 
 antigen use oh-my-zsh
 
@@ -18,5 +25,8 @@ antigen apply
 ## FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Source custom environment and aliases
-source ~/.bashrc
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh

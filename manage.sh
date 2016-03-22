@@ -2,7 +2,6 @@
 
 FILES=(\
     bash_profile \
-    bashrc \
     gitconfig \
     zshrc \
 )
