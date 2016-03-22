@@ -1,1 +1,1 @@
-[[ $- == *i* ]] && source "$HOME/.bashrc"
+[[ $- == *i* ]] && source "$HOME/.zshrc"

@@ -1,10 +1,9 @@
 [user]
   name = Adam Pallin
-  email = adamrpallin@gmail.com
+  email = apallin@lyft.com
 [core]
   excludesfile = ~/.gitignore
   whitespace = trailing-space,space-before-tab
-	editor = subl -n -w
 [color]
   ui = auto
 [github]
@@ -20,6 +19,7 @@
   branches    = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   c           = clone --recursive
   co          = checkout
+  con         = "!git ls-files -u | cut -f 2 | sort -u"
   cob         = checkout -b
   ca          = commit -a --verbose
   cm          = commit -m
@@ -37,11 +37,14 @@
   r           = reflog -5
   ra          = rebase --abort
   rc          = rebase --continue
+  rh          = reset HEAD --hard
   rma         = rebase master
   rmi         = rebase master -i
   rv          = remote -v
   rao         = remote add origin
   s           = status -sb
+  ss          = stash save
+  sp          = stash pop  
   sub         = submodule update --init --recursive
   undo        = reset --soft HEAD^
 [fetch]
