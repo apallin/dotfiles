@@ -35,3 +35,15 @@ alias ptp="ptpython"
 alias rmdd="rm -rfd ~/Library/Developer/Xcode/DerivedData/*"
 alias makeios='make -f ci/ios/Makefile'
 alias makeandr='make -f ci/android/Makefile'
+
+# Git
+alias ga='git add'
+alias gac='git add . && git commit -am'
+alias gbranches="git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+alias gcob='git checkout -b'
+alias gpul='git pull'
+alias gpunch='git push --force-with-lease'
+alias gpush='git push'
+alias gra='git rebase --abort' 
+alias gsub='submodule update --init --recursive'
+alias gundo='git reset --soft HEAD^'
