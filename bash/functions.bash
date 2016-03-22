@@ -1,3 +1,5 @@
+local fuzzy_selector=fzf
+
 # pyclean: Clean all Python caches recursivly
 pyclean () {
     find . -name "*.pyc" -exec rm -rf {} \;
@@ -36,3 +38,29 @@ extract () {
 ff () { /usr/bin/find . -name "$@" ; }      # ff: Find file under the current directory
 ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs: Find file whose name starts with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe: Find file whose name ends with a given string
+
+make_pr() {
+  if [[ -n $1 ]]; then
+      branch=$1
+  else
+      branch=master
+  fi
+  hub pull-request -b $branch -o
+}
+
+function wo() {
+    code_dirs=(
+        ~/src
+    )
+    dir_list=$(find "${code_dirs[@]}" -type d -maxdepth 5 | grep -v /Pods)
+
+    if [[ -n $1 ]]; then
+        cd "$(grep --max-count=1 -i "$*" <<< $dir_list)"
+    else
+        if [ -x "$(which $fuzzy_selector)" ]; then
+            cd "$(grep -v /Pods <<< $dir_list | $fuzzy_selector)"
+        else
+            echo "You need to install '$fuzzy_selector' to get the fuzzy finder"
+        fi
+    fi
+}

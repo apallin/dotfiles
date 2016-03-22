@@ -28,7 +28,7 @@
   d           = diff
   dc          = diff --cached
   dstash      = !sh -c 'git stash show -p stash@{${1-0}}' -
-  l           = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  lg         = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   la          = "!git config -l | grep alias | cut -c 7-"
   last        = diff HEAD^ HEAD
   pul         = pull
