@@ -52,7 +52,7 @@ function wo() {
     code_dirs=(
         ~/src
     )
-    dir_list=$(find "${code_dirs[@]}" -type d -maxdepth 5 | grep -v /Pods)
+    dir_list=$(find "${code_dirs[@]}" -type d -maxdepth 3 | grep -v /Pods)
 
     if [[ -n $1 ]]; then
         cd "$(grep --max-count=1 -i "$*" <<< $dir_list)"
