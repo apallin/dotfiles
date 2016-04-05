@@ -3,7 +3,10 @@
 FILES=(\
     bash_profile \
     gitconfig \
+    vim \
+    vimrc \
     zshrc \
+
 )
 
 function custom_path () {
