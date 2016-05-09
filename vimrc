@@ -79,7 +79,8 @@ Plug 'wting/rust.vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-cucumber'
-Plug 'instant-markdown.vim'
+Plug 'godlygeek/tabular.vim'
+Plug 'plasticboy/vim-markdown.vim'
 Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-jdaddy'
 Plug 'Keithbsmiley/swift.vim'
@@ -94,13 +95,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM APPEARANCE / BEHAVIOR CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if strftime("%H") >= 5 && strftime("%H") <= 17
-    "set background=light
-    colorscheme Tomorrow
-else
-    colorscheme Tomorrow-Night-Eighties
-    "set background=dark
-endif
 
 " Netrw width
 let g:netrw_winsize = 25
@@ -181,7 +175,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set list
 " Ruler
-set cc=80
+autocmd FileType python set cc=80
 autocmd FileType objc set cc=120
 " TODO: see if i can get rid of this or make it smarter
 "highlight ColorColumn guibg=Black
