@@ -33,3 +33,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # added by travis gem
 [ -f /Users/adampallin/.travis/travis.sh ] && source /Users/adampallin/.travis/travis.sh
+source '/Users/adampallin/src/blessclient/lyftprofile' # bless ssh alias

@@ -64,3 +64,13 @@ function wo() {
         fi
     fi
 }
+
+function rage_delete_branches() {
+    for branch in $(git branch | grep -Ev '\smaster$|^\*'); do
+        echo "Delete branch '$branch'?"
+        read -r confirm
+        if [[ $confirm = 'y' ]]; then
+            git branch -D "$branch"
+        fi
+    done
+}
