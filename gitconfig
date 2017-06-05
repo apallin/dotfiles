@@ -4,7 +4,7 @@
 [core]
   excludesfile = ~/.gitignore
   whitespace = trailing-space,space-before-tab
-  editor = 'subl' --wait
+  editor = 'atom' --wait
 [color]
   ui = auto
 [github]
@@ -45,7 +45,7 @@
   rao         = remote add origin
   s           = status -sb
   ss          = stash save
-  sp          = stash pop  
+  sp          = stash pop
   sub         = submodule update --init --recursive
   undo        = reset --soft HEAD^
 [fetch]

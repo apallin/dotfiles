@@ -18,7 +18,7 @@ antigen bundle tarruda/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 
 # Apply theme
-antigen theme mortalscumbag
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
 antigen apply
 
