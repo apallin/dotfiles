@@ -32,9 +32,6 @@ alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5m
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 alias qfind="find . -name "                 # qfind:    Quickly search for file
 alias ptp="ptpython"
-alias rmdd="rm -rfd ~/Library/Developer/Xcode/DerivedData/*"
-alias makeios='make -f ci/ios/Makefile'
-alias makeandr='make -f ci/android/Makefile'
 
 # Git
 alias ga='git add'

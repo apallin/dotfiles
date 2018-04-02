@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 FILES=(\
-    bash_profile \
     gitconfig \
     vim \
     vimrc \

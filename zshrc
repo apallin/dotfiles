@@ -28,11 +28,9 @@ antigen apply
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
-
 # Blessclient
 source "$HOME"/src/blessclient/lyftprofile
 
 # Local source
 source "$HOME"/.localrc
+source '/Users/apallin/src/blessclient/lyftprofile' # bless ssh alias

@@ -6,3 +6,4 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export WORKON_HOME=$HOME/pythonenvs
 export EDITOR=vi
 export VISUAL=vi
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
