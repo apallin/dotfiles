@@ -5,7 +5,8 @@ pyclean () {
     find . -name "*.pyc" -exec rm -rf {} \;
     find . -name "__pycache__" -exec rm -rf {} \;
     find . -name ".cache" -exec rm -rf {} \;
-
+    find . -name "build" -exec rm -rf {} \;
+    find . -name ".mypy_cache" -exec rm -rf {} \;
 }
 
 # showa: To remind yourself of an alias (given some part of it)
@@ -73,4 +74,53 @@ function rage_delete_branches() {
             git branch -D "$branch"
         fi
     done
+}
+
+function container_py_shell () {
+  control enter "${current_proj_name}.legacy"
+  service_venv pip install ptpython
+  service_venv ptpython
+}
+
+function container_service_logs() {
+  control enter "${current_proj_name}.legacy"
+  tail -f "/var/log/${current_proj_name}-web/current"
+}
+
+function launch_lyft_code_session() {
+  current_proj_name=${PWD##*/}
+  subl .
+
+  tmux new-session -t $current_proj_name
+  control ensure -g "${current_proj_name}.dev"
+  tmux split-pane -h
+  tmux split-window -v
+  tmux select-pane -t 0
+  container_py_shell
+  tmux select-pane -t 1
+  container_service_logs
+}
+
+function launch_code_session(){
+  current_proj_name=${PWD##*/}
+  subl .
+  tmux new-session -A -t $current_proj_name
+}
+
+function new_code_session() {
+    code_dirs=(
+        ~/src
+    )
+    dir_list=$(find "${code_dirs[@]}" -type d -maxdepth 1 | grep -v /Pods)
+    if [ -x "$(which $fuzzy_selector)" ]; then
+        cd "$(grep -v /Pods <<< $dir_list | $fuzzy_selector)"
+    else
+        echo "You need to install '$fuzzy_selector' to get the fuzzy finder"
+    fi
+
+    if if [ -f ./manifest.yaml ]; then
+       launch_lyft_code_session
+    else
+       launch_code_session
+    fi
 }

@@ -52,4 +52,3 @@ alias ctu='control test "$(uq manifest.yaml | jq --raw-output .name)".unit'
 alias ctl='control test "$(uq manifest.yaml | jq --raw-output .name)".lint'
 alias cpc='control run piptools.compile "$(uq manifest.yaml | jq --raw-output .name)"'
 alias crd='control run -d "$(uq manifest.yaml | jq --raw-output .name)".legacy'
-

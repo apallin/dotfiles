@@ -2,10 +2,10 @@
 
 FILES=(\
     gitconfig \
+    tmux.conf \
     vim \
     vimrc \
     zshrc \
-
 )
 
 function custom_path () {
