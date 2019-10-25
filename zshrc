@@ -33,8 +33,8 @@ source "$HOME"/src/blessclient/lyftprofile
 
 # Local source
 source "$HOME"/.localrc
+eval "$(/lyft/brew/bin/aactivator init)"
 source '/Users/apallin/src/awsaccess/awsaccess2.sh' # awsaccess
 source '/Users/apallin/src/awsaccess/oktaawsaccess.sh' # oktaawsaccess
 export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
-source ~/.kube-cache/bin/lyftlearn_profile
-eval "$(/lyft/brew/bin/aactivator init)"
+PATH=$PATH:/Users/apallin/.lyftkube-bin

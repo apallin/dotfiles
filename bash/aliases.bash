@@ -31,7 +31,6 @@ alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1m
 alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 alias qfind="find . -name "                 # qfind:    Quickly search for file
-alias ptp="ptpython"
 
 # Git
 alias ga='git add'
@@ -40,7 +39,7 @@ alias gbranches="git for-each-ref --sort='-authordate' --format='%(authordate)%0
 alias gcob='git checkout -b'
 alias gpul='git pull'
 alias gpunch='git push --force-with-lease'
-alias gpush='git push'
+alias gpush="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
 alias gra='git rebase --abort' 
 alias gsub='git submodule update --init --recursive'
 alias gundo='git reset --soft HEAD^'
