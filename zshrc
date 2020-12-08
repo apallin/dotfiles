@@ -28,13 +28,6 @@ antigen apply
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Blessclient
-source "$HOME"/src/blessclient/lyftprofile
-
 # Local source
 source "$HOME"/.localrc
-eval "$(/lyft/brew/bin/aactivator init)"
-source '/Users/apallin/src/awsaccess/awsaccess2.sh' # awsaccess
-source '/Users/apallin/src/awsaccess/oktaawsaccess.sh' # oktaawsaccess
-export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
-PATH=$PATH:/Users/apallin/.lyftkube-bin
+
