@@ -7,3 +7,4 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export WORKON_HOME=$HOME/pythonenvs
 export EDITOR=vi
 export VISUAL=vi
+export NVM_DIR="$HOME/.nvm"
