@@ -8,3 +8,4 @@ export WORKON_HOME=$HOME/pythonenvs
 export EDITOR=vi
 export VISUAL=vi
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=0
