@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 bindkey -e
 
 # Path to dotfiles repo
@@ -37,3 +39,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Local source
 source "$HOME"/.localrc
+
