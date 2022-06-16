@@ -2,7 +2,6 @@
 
 FILES=(\
     gitconfig \
-    tmux.conf \
     vim \
     vimrc \
     zshrc \
