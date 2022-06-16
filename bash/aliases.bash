@@ -44,10 +44,3 @@ alias gra='git rebase --abort'
 alias gsub='git submodule update --init --recursive'
 alias gundo='git reset --soft HEAD^'
 alias gs='git status -sb'
-
-# Control
-alias cb='control build "$(uq manifest.yaml | jq --raw-output .name)"'
-alias ctu='control test "$(uq manifest.yaml | jq --raw-output .name)".unit'
-alias ctl='control test "$(uq manifest.yaml | jq --raw-output .name)".lint'
-alias cpc='control run piptools.compile "$(uq manifest.yaml | jq --raw-output .name)"'
-alias crd='control run -d "$(uq manifest.yaml | jq --raw-output .name)".legacy'
