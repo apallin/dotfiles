@@ -9,9 +9,6 @@ pyclean () {
     find . -name ".mypy_cache" -exec rm -rf {} \;
 }
 
-# showa: To remind yourself of an alias (given some part of it)
-showa () { /usr/bin/grep --color=always -i -a1 $@ ~/Library/init/bash/aliases.bash | grep -v '^\s*$' | less -FSRXc ; }
-
 zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
 
 # extract: Extract most know archives with one command
