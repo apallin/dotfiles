@@ -44,7 +44,7 @@ make_pr() {
   if [[ -n $1 ]]; then
       branch=$1
   else
-      branch=master
+      branch=main
   fi
   hub pull-request -b $branch -o
 }

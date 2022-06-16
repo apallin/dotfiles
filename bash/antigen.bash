@@ -185,7 +185,7 @@ antigen () {
           if [[ $url == *\|* ]]; then
             revision=$(-antigen-bundle-rev $url $make_local_clone)
           else
-            revision="master"
+            revision="main"
           fi
 
           if [[ $loc != '/' ]]; then
@@ -386,7 +386,7 @@ antigen () {
   local success=false
 
   # If its a specific branch that we want, checkout that branch.
-  local branch="master" # TODO FIX THIS
+  local branch="main" # TODO FIX THIS
   if [[ $url == *\|* ]]; then
     branch="$(-antigen-parse-branch ${url%|*} ${url#*|})"
   fi
@@ -1165,8 +1165,8 @@ antigen-selfupdate () {
    fi
    local head="$(git rev-parse --abbrev-ref HEAD)"
    if [[ $head == "HEAD" ]]; then
-     # If current head is detached HEAD, checkout to master branch.
-     git checkout master
+     # If current head is detached HEAD, checkout to main branch.
+     git checkout main
    fi
    git pull
 
@@ -1341,7 +1341,7 @@ antigen-update () {
   url="$(echo "$record" | cut -d' ' -f1)"
   make_local_clone=$(echo "$record" | cut -d' ' -f4)
   
-  local branch="master"
+  local branch="main"
   if [[ $url == *\|* ]]; then
     branch="$(-antigen-parse-branch ${url%|*} ${url#*|})"
   fi

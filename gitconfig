@@ -39,8 +39,8 @@
   ra          = rebase --abort
   rc          = rebase --continue
   rh          = reset HEAD --hard
-  rma         = rebase master
-  rmi         = rebase master -i
+  rma         = rebase main
+  rmi         = rebase main -i
   rv          = remote -v
   rao         = remote add origin
   s           = status -sb

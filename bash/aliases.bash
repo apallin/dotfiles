@@ -38,7 +38,7 @@ alias gac='git add . && git commit -am'
 alias gbranches="git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 alias gcob='git checkout -b'
 alias gpul='git pull'
-alias gpunch='git push --force-with-lease'
+alias gpunch='git push -u --force-with-lease'
 alias gpush="git push --set-upstream origin $(git branch | awk '/^\* / { print $2 }')"
 alias gra='git rebase --abort' 
 alias gsub='git submodule update --init --recursive'
