@@ -36,15 +36,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Local source
 source "$HOME"/.localrc
-
-export PATH="/opt/homebrew/opt/m4/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/postgresql@12/lib $LDFLAGS"
-export LDFLAGS="-L/usr/local/opt/libq/lib $LDFLAGS"
-export CPPFLAGS="-I/usr/local/opt/postgresql@12/include $CPPFLAGS"
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
-
-alias brew86="arch -x86_64 /usr/local/bin/brew"
-alias brewm1="/opt/homebrew/bin/brew"
-alias brew="brew86"
-export PATH="/usr/local/opt/node@16/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@13/bin:$PATH"

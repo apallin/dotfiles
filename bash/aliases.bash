@@ -44,3 +44,8 @@ alias gra='git rebase --abort'
 alias gsub='git submodule update --init --recursive'
 alias gundo='git reset --soft HEAD^'
 alias gs='git status -sb'
+
+# Homebrew
+alias brew86="arch -x86_64 /usr/local/bin/brew"
+alias brewm1="/opt/homebrew/bin/brew"
+alias brew="brew86"
