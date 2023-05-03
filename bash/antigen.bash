@@ -185,7 +185,7 @@ antigen () {
           if [[ $url == *\|* ]]; then
             revision=$(-antigen-bundle-rev $url $make_local_clone)
           else
-            revision="main"
+            revision="master"
           fi
 
           if [[ $loc != '/' ]]; then
@@ -244,7 +244,7 @@ antigen () {
 # Returns
 #   List of themes by name
 -antigen-get-themes () {
-  local library='robbyrussell/oh-my-zsh'
+  local library='ohmyzsh/ohmyzsh'
   local bundle=$(-antigen-find-bundle $library)
 
   if [[ -n "$bundle" ]]; then
@@ -386,7 +386,7 @@ antigen () {
   local success=false
 
   # If its a specific branch that we want, checkout that branch.
-  local branch="main" # TODO FIX THIS
+  local branch="master" # TODO FIX THIS
   if [[ $url == *\|* ]]; then
     branch="$(-antigen-parse-branch ${url%|*} ${url#*|})"
   fi
@@ -433,7 +433,7 @@ antigen () {
 
   # Pre-startup initializations.
   -antigen-set-default ANTIGEN_OMZ_REPO_URL \
-    https://github.com/robbyrussell/oh-my-zsh.git
+    https://github.com/ohmyzsh/ohmyzsh.git
   -antigen-set-default ANTIGEN_PREZTO_REPO_URL \
     https://github.com/sorin-ionescu/prezto.git
   -antigen-set-default ANTIGEN_DEFAULT_REPO_URL $ANTIGEN_OMZ_REPO_URL
@@ -1165,8 +1165,8 @@ antigen-selfupdate () {
    fi
    local head="$(git rev-parse --abbrev-ref HEAD)"
    if [[ $head == "HEAD" ]]; then
-     # If current head is detached HEAD, checkout to main branch.
-     git checkout main
+     # If current head is detached HEAD, checkout to master branch.
+     git checkout master
    fi
    git pull
 
@@ -1341,7 +1341,7 @@ antigen-update () {
   url="$(echo "$record" | cut -d' ' -f1)"
   make_local_clone=$(echo "$record" | cut -d' ' -f4)
   
-  local branch="main"
+  local branch="master"
   if [[ $url == *\|* ]]; then
     branch="$(-antigen-parse-branch ${url%|*} ${url#*|})"
   fi
